@@ -1,5 +1,5 @@
 # GymTracker
-Application to track your progress in the gym. 
+Own the grind, Track the Rise!!
 
 # Backend Features
 

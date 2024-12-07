@@ -15,7 +15,7 @@ This Gym Tracking App has three main pages that allow users to manage their work
    The home page provides users with an easy entry point to start using the app.
 
    **Screenshot**:
-   ![Home Page](https://github.com/user-attachments/assets/b340384e-627e-4d56-8103-0d16fccf389a)
+   <img width="339/2" alt="image" src="https://github.com/user-attachments/assets/b340384e-627e-4d56-8103-0d16fccf389a">
 
 ### 2. **User Main Page**
    - **Add Workout Button**: Users can tap this button to navigate to the Add Workouts page where they can log new exercises.
@@ -24,7 +24,7 @@ This Gym Tracking App has three main pages that allow users to manage their work
    The User Main Page is the central hub for managing workouts and seeing workout history.
 
    **Screenshot**:
-   ![User Main Page](https://github.com/user-attachments/assets/1c099fdf-530d-49d3-8b23-8d472f2c6c78)
+<img width="339/2" alt="image" src="https://github.com/user-attachments/assets/1c099fdf-530d-49d3-8b23-8d472f2c6c78">
 
 ### 3. **Add Workouts Page**
    - **Workout Fields**: Users can fill in details about the workout they wish to log, such as:
@@ -39,7 +39,7 @@ This Gym Tracking App has three main pages that allow users to manage their work
    The Add Workouts page is designed to allow users to easily log new workouts and exercises.
 
    **Screenshot**:
-   ![Add Workouts Page](https://github.com/user-attachments/assets/ece5b051-fa53-48ef-9161-2848ba65d7de)
+<img width="348/2" alt="image" src="https://github.com/user-attachments/assets/ece5b051-fa53-48ef-9161-2848ba65d7de">
 
 ## Features
 

@@ -75,12 +75,4 @@ This backend provides RESTful APIs for managing users and their exercises in a g
 - *Flask*: Lightweight framework for REST API development.
 - *SQLite*: Simple and efficient database management system.
 
----
-
-## How to Run the Application
-1. Ensure you have Python installed.
-2. Install dependencies:  
-   ```bash
-   pip install flask
-
 

@@ -1,6 +1,54 @@
 # GymTracker
 Own the grind, Track the Rise!!
 
+# Gym Tracking App Frontend
+
+This Gym Tracking App has three main pages that allow users to manage their workouts. The app's primary features include logging workouts and viewing previous workouts.
+
+## Pages
+
+### 1. **Home Page**
+   - **Login**: Users can enter username and password to log in.
+   - **Create Account**: New users can attempt to create an account by filling out a registration form.
+   - **Guest Login**: Users can log in as a guest without creating an account.
+
+   The home page provides users with an easy entry point to start using the app.
+
+   **Screenshot**:
+   ![Home Page](https://github.com/user-attachments/assets/b340384e-627e-4d56-8103-0d16fccf389a)
+
+### 2. **User Main Page**
+   - **Add Workout Button**: Users can tap this button to navigate to the Add Workouts page where they can log new exercises.
+   - **Previous Workouts**: A list of all past workouts is displayed on the page. This section allows users to view their workout history.
+
+   The User Main Page is the central hub for managing workouts and seeing workout history.
+
+   **Screenshot**:
+   ![User Main Page](https://github.com/user-attachments/assets/1c099fdf-530d-49d3-8b23-8d472f2c6c78)
+
+### 3. **Add Workouts Page**
+   - **Workout Fields**: Users can fill in details about the workout they wish to log, such as:
+     - **Exercise Name**
+     - **Exercise Type**
+     - **Weight**
+     - **Sets**
+     - **Reps**
+     - **Date**
+   - **Submit Button**: After filling out the form, users can submit their workout to be saved.
+
+   The Add Workouts page is designed to allow users to easily log new workouts and exercises.
+
+   **Screenshot**:
+   ![Add Workouts Page](https://github.com/user-attachments/assets/ece5b051-fa53-48ef-9161-2848ba65d7de)
+
+## Features
+
+- **User Authentication**: Users can log in as guest without an account.
+- **Add New Workouts**: Users can specify details like the exercise type, weight, and date of new workouts.
+- **View Previous Workouts**: A history of workouts is available on the main user page, allowing users to review their past entries.
+
+
+
 # Backend Features
 
 This backend provides RESTful APIs for managing users and their exercises in a gym tracking application. Below are the key features implemented:

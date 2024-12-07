@@ -9,6 +9,14 @@ import SwiftUI
 import UIKit
 
 struct MainPage : View {
+    @State var workouts: [Workout] = []
+    
+    func getWorkouts() {
+        NetworkManager.shared.getAllWorkouts(userId: 1) { exercises in
+            self.workouts = exercises
+        }
+    }
+    
     
     var body: some View {
         NavigationStack {
@@ -36,17 +44,27 @@ struct MainPage : View {
                 prevWorkouts
                 
                 ScrollView {
-                    workout
-                    workout
-                    workout
-                    workout
-                    workout
-                    workout
+                    let workoutEg = Workout(id: 0, userId: 1, exerciseName: "Push ups", exerciseType: "Arms", exerciseWeight: 0, exerciseDate: "12/6/24", exerciseSets: 3, exerciseReps: 30)
+                    showWorkout(workout: workoutEg)
+                    
+                    ForEach(self.workouts, id: \.id) { workout in
+                        showWorkout(workout: workout)
+                    }
+                    
+                    //workout
+                    //workout
+                    //workout
+                    //workout
+                    //workout
                 }
                 .scrollIndicators(.hidden)
                 
                 Spacer()
             }
+        }
+        .onAppear {
+            getWorkouts()
+            print(self.workouts)
         }
     }
     
@@ -70,6 +88,32 @@ struct MainPage : View {
             .font(.headline)
             .padding(.bottom, 20)
     }
+    
+    private func showWorkout(workout: Workout) -> some View {
+        VStack {
+            HStack {
+                Text(workout.exerciseName)
+                    .padding()
+                    .background(.blue)
+                    .foregroundColor(.white)
+                    .shadow(radius: 5)
+                Text("Type: \(workout.exerciseType)")
+            }
+            
+            HStack {
+                Text("Num Sets: \(workout.exerciseSets)")
+                Text("Num Reps: \(workout.exerciseReps)")
+            }
+            
+            Text("Date: \(workout.exerciseDate)")
+                .font(.caption)
+        }
+        .padding()
+        .cornerRadius(10)
+        .frame(width: 300, height: 150)
+        .border(.black, width: 2)
+    }
+    
     
     private var workout : some View {
         VStack {

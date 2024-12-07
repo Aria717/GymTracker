@@ -98,8 +98,21 @@ struct AddWorkoutPage : View {
         Button {
             
             if let intWeight = Int(weight), let setCount = Int(numSets), let repCount = Int(numReps)  {
-                NetworkManager.shared.saveWorkout(id: ContentView.userId, name: name, type: type, weight: intWeight, date: date, numSets: setCount, numReps: repCount) { workout in
-                    
+                
+                print("Name: \(name) of type \(Swift.type(of: name))")
+                print("Type: \(type) of type \(Swift.type(of: type))")
+                print("Weight: \(intWeight) of type \(Swift.type(of: intWeight))")
+                print("Date: \(date) of type \(Swift.type(of: date))")
+                print("NumSets: \(setCount) of type \(Swift.type(of: setCount))")
+                print("NumReps: \(repCount) of type \(Swift.type(of: repCount))")
+                
+                
+                
+                NetworkManager.shared.saveWorkout(userId: ContentView.userId, name: name, type: type, weight: intWeight, date: date, numSets: setCount, numReps: repCount) { workout in
+                }
+                
+                NetworkManager.shared.getAllWorkouts(userId: ContentView.userId) { workouts in
+                //    self.workouts = workouts
                 }
                 
                 name = "Name"

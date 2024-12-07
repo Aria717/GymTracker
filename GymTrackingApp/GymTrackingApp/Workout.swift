@@ -7,11 +7,12 @@
 
 struct Workout : Codable {
     let id: Int
-    let name: String
-    let type: Int
-    let weight: Int
-    let date: Int
-    let sets: Int
-    let reps: Int
+    let userId: Int
+    let exerciseName: String
+    let exerciseType: String
+    let exerciseWeight: Double?
+    let exerciseDate: String
+    let exerciseSets: Int
+    let exerciseReps: Int
 }
 

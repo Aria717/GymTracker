@@ -11,7 +11,7 @@ import UIKit
 struct ContentView: View {
     @State private var username: String = ""
     @State private var password: String = ""
-    static var userId: Int = 0
+    static var userId: Int = 1
     
     var title : some View {
         Text("Your Gym Tracker")

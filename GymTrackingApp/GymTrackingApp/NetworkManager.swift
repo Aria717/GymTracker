@@ -14,7 +14,7 @@ public class NetworkManager {
     
     private init () {}
     
-    private let endpoint = ""
+    private let endpoint = "http://34.86.107.209"
     private let decoder = JSONDecoder()
     
     //MARK: add user
@@ -62,12 +62,12 @@ public class NetworkManager {
     
     
     //MARK: save workout
-    func saveWorkout(id: Int, name: String, type: String, weight: Int, date: String, numSets: Int, numReps: Int, completion: @escaping (Workout) -> Void) {
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+    func saveWorkout(userId: Int, name: String, type: String, weight: Int, date: String, numSets: Int, numReps: Int, completion: @escaping (Workout) -> Void) {
+        //decoder.keyDecodingStrategy = .convertFromSnakeCase
         let endpoint = self.endpoint + "/api/exercises/"
         
         let parameters: Parameters = [
-            "user_id": id,
+            "user_id": userId,
             "exercise_name": name,
             "exercise_type": type,
             "exercise_weight": weight,
@@ -86,19 +86,25 @@ public class NetworkManager {
                 case .failure(let error):
                     print("Error in NetworkManager.saveWorkout \(error.localizedDescription)")
                 }
-                
             }
+    }
+    
+    //MARK: get all workouts
+    func getAllWorkouts(userId: Int, completion: @escaping ([Workout]) -> Void) {
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let endpoint = self.endpoint + "/api/exercises/user/\(userId)/"
         
-        
-        /*
-         user_id = body.get("user_id")
-         exercise_name = body.get("exercise_name")
-         exercise_type = body.get("exercise_type")
-         exercise_weight = body.get("exercise_weight")
-         exercise_date = body.get("exercise_date")
-         exercise_sets = body.get("exercise_sets")
-         exercise_reps = body.get("exercise_reps")
-         */
+        AF.request(endpoint, method: .get)
+            .validate()
+            .responseDecodable(of: [Workout].self, decoder: decoder) { response in
+                switch response.result {
+                case .success(let workoutList):
+                    print("Successfully got workout list of size \(workoutList.count)")
+                    completion(workoutList)
+                case .failure(let error):
+                    print("Error in NetworkManager.getAllWorkouts \(error.localizedDescription)")
+                }
+            }
     }
     
     

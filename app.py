@@ -78,7 +78,7 @@ def add_exercise():
     exercise_sets = body.get("exercise_sets")
     exercise_reps = body.get("exercise_reps")
 
-    if not all([user_id, exercise_name, exercise_type, exercise_date, exercise_sets, exercise_reps]):
+    if not all([user_id, exercise_name, exercise_type, exercise_weight, exercise_date, exercise_sets, exercise_reps]):
         return failure_response("Missing required fields.", 400)
 
     exercise_id = db.insert_exercise(
